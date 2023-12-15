@@ -32,6 +32,9 @@ After you have executed these 2 commands, the gateway reboots.
 Log in to the dashboard (Briffy) and look at MINER VERSION at the bottom of the page. If it says something like 1.0.0, you need to update the miner. We do this via the dashboard: TOOLS -> UPDATE MINER.
 
 If all goes well you should now be on version 1.3.0. Congratulations, everything should work again. Do not use any other options on the dashboard, this will not work!
+
+---------------------
+
 2:
 Connect using SSH to the gateway.
 
@@ -69,6 +72,9 @@ More information about Crankk can be found at https://crankk.io/
 So you don't need a license if you only want to mine IOT / helium, but you do need it if you also want to participate in crankk. The nice thing is that they keep the software up to date and we no longer have to do anything ourselves, unlike the Pisces software itself...
 
 If you want to purchase a license, do so via https://dashboard.crankk.io/?ref=U_FF9LPX0JG5N you will receive a 5 dollar discount!
+
+------------------------
+
 
 3:
 It is best to use a different SD-Card and have your current one as a backup. We can always go back.
