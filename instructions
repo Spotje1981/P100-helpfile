@@ -1,0 +1,90 @@
+Attention! I am not an official support person for the Pisces company, I am just trying to keep my gateway online and share how I do that.
+
+In addition, it is cool that the Pisces image has SSH access, so you can also install other software and earn money if desired.
+
+As far as I know there are currently 3 options to get your gateway working again. I will elaborate on them below. With options 1 and 2 you can leave the SD card in place and only SSH access is required. With option 3 you will have to replace/rewrite the SD card, so you must be able to access the gateway.
+
+
+1 - Update the gateway with Pisces software and apply a patch for the dashboard (it remains crappy). - In the future we have to keep messing with things.
+
+2 - We put the software on the gateway and switch to the Crankk dashboard and software. - Crankk maintains the helium software, we don't have to do anything anymore!
+
+3 - We use a completely different image on the gateway (Crankk). It is important that the miner has already been onboarded on the helium network.
+
+
+—--------
+
+1:
+Connect to the gateway via SSH and run the following commands:
+
+wget http://pisces-firmware.sidcloud.cn/latest/EU/update.sh -O - | sudo bash
+
+
+Replace EU for your region if it is not EU! The firmware is now being updated.
+Once done, the dashboard patch is needed:
+
+sudo wget https://raw.githubusercontent.com/lt-columbo/pisces_tools/main/dashboard_patch/install.sh -O - | sudo bash
+
+More info about the dashboard patch can be found here: https://github.com/lt-columbo/pisces_tools/blob/main/dashboard_patch/README.md
+
+After you have executed these 2 commands, the gateway reboots.
+
+Log in to the dashboard (Briffy) and look at MINER VERSION at the bottom of the page. If it says something like 1.0.0, you need to update the miner. We do this via the dashboard: TOOLS -> UPDATE MINER.
+
+If all goes well you should now be on version 1.3.0. Congratulations, everything should work again. Do not use any other options on the dashboard, this will not work!
+2:
+Connect using SSH to the gateway.
+
+sudo -i
+
+vi /lib/systemd/system/helium.service
+
+Put a # in front of EACH LINE so that it will no longer be executed, save the file and exit.
+
+systemctl stop helium
+The helium service is now stopped.
+
+You can now disconnect the SSH connection, we will now continue with the installation of Crankk:
+Download the crankk windows installer and run it: https://downloads.crankk.io/setup_2023.07.11.0.exe
+
+Enter the gateway's IP and your login details. You can now install the crankk software.
+
+Once this is done, log in to the gateway via IP:17080
+At SETUP GATEWAY we do NOT choose helium (which it should be) but CRANKK IMAGE.
+
+The gateway will install some things. Once it is ready, choose the HELIUM option on the right. Click on install there. Leave ECC I2C BUS set to 0!
+
+When it is finished you will see your miner-gateway name and the installed version (1.3.0).
+
+Congratulations, your miner is working on the helium network again and will earn IOT again.
+No longer use the old dashboard, but do everything via the new Crankk dashboard.
+
+If you want you can also earn Crankk, you must purchase a license for this, which costs $ 150 in KDA and also $ 100 in CRK. I give a 5 dollar discount via this link: https://dashboard.crankk.io/?ref=U_FF9LPX0JG5N
+
+To further carry out the crank installation, see FROM point 2 in this manual:
+https://crankk.io/storage/2023/08/PISCES-P100.pdf
+
+More information about Crankk can be found at https://crankk.io/
+
+So you don't need a license if you only want to mine IOT / helium, but you do need it if you also want to participate in crankk. The nice thing is that they keep the software up to date and we no longer have to do anything ourselves, unlike the Pisces software itself...
+
+If you want to purchase a license, do so via https://dashboard.crankk.io/?ref=U_FF9LPX0JG5N you will receive a 5 dollar discount!
+
+3:
+It is best to use a different SD-Card and have your current one as a backup. We can always go back.
+A very good manual can be found at https://crankk.io/storage/2023/08/PISCES-P100.pdf
+If you want to purchase a license, do so via https://dashboard.crankk.io/?ref=U_FF9LPX0JG5N you will receive a 5 dollar discount!
+Buying a license is not necessary if you only want to earn helium (IOT).
+
+We still have to activate helium in the new dashboard:
+Log in to the gateway via IP:17080
+Select the HELIUM option on the right. Click on install there. Leave ECC I2C BUS at 0!
+
+When it is finished you will see your miner-gateway name and the installed version (1.3.0).
+
+Congratulations, your miner is working on the helium network again and will earn IOT again.
+
+Let me know your comments so I can improve the manual if necessary!
+
+Thank you in advance,
+Marcel.
