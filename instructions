@@ -35,6 +35,21 @@ Log in to the dashboard (Briffy) and look at MINER VERSION at the bottom of the 
 
 If all goes well you should now be on version 1.3.0. Congratulations, everything should work again. Do not use any other options on the dashboard, this will not work!
 
+You can check logs with this SSH command: sudo systemctl status helium
+Will give something like this:
+● helium.service - helium gateway
+   Loaded: loaded (/lib/systemd/system/helium.service; static; vendor preset: enabled)
+   Active: active (running) since Tue 2023-11-28 21:14:17 GMT; 2 weeks 3 days ago
+ Main PID: 2413 (helium_gateway)
+    Tasks: 3 (limit: 4225)
+   CGroup: /system.slice/helium.service
+           └─2413 /etc/helium_gateway/helium_gateway server
+
+Dec 16 11:38:38 raspberrypi helium_gateway[2413]: 2023-12-16T11:38:38.581917Z  INFO run: gateway_rs::beaconer: poc witness report submitted beacon_id
+
+Check youre logs with: sudo journalctl -u helium
+
+
 ---------------------
 
 2:
