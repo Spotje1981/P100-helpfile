@@ -1,28 +1,11 @@
 P100 HELP....
 
 Im using Crankk now and not working anymore on this document.
-See the instructions for dont burning a new SD-Card.
+See the instructions for dont burning a new SD-Card. (https://github.com/Spotje1981/P100-helpfile/blob/main/instructions)
 Else its better to move on to crankk software for the Pisces P100.
 
 Info: https://crankk.io/
 Registere here and get 5KDA back: https://dashboard.crankk.io/?ref=U_FF9LPX0JG5N
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### NEW DOCKER
 docker run -d --privileged \
@@ -39,12 +22,6 @@ docker run -d --privileged \
 
  I2C=0   
 
-
-# P100-helpfile
-Keep the Pisces P100 working (3 ways)
-
-DONT FOLLOW ALL THE STEPS, you have to choose wich option you will use.
-Please read the instructions first, than decide what option you are going to use.
 
 
 You can try official software with:
