@@ -1,3 +1,29 @@
+P100 HELP....
+
+Im using Crankk now and not working anymore on this document.
+See the instructions for dont burning a new SD-Card.
+Else its better to move on to crankk software for the Pisces P100.
+
+Info: https://crankk.io/
+Registere here and get 5KDA back: https://dashboard.crankk.io/?ref=U_FF9LPX0JG5N
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### NEW DOCKER
 docker run -d --privileged \
     --name miner \
