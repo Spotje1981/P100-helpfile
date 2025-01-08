@@ -10,13 +10,25 @@ Registere here and get 5KDA back: https://dashboard.crankk.io/?ref=U_FF9LPX0JG5N
 ### NEW DOCKER
 docker run -d --privileged \
     --name miner \
-    -e GW_KEYPAIR="ecc://i2c-1:96?slot=0" \
-    -e GW_ONBOARDING="ecc://i2c-1:96?slot=15" \
+    -e GW_KEYPAIR="ecc://i2c-0:96?slot=0" \
+    -e GW_ONBOARDING="ecc://i2c-0:96?slot=15" \
     -e RUST_BACKTRACE=1 \
     -e GW_LISTEN=0.0.0.0:1680 \
     --network host \
     --restart unless-stopped \
-    --device "/dev/i2c-1:/dev/i2c-1:rwm" \
+    --device "/dev/i2c-0:/dev/i2c-0:rwm" \
+    quay.io/team-helium/miner:gateway-latest \
+    helium_gateway server
+
+
+    docker run -d --privileged \
+    --name miner \
+    -e GW_KEYPAIR=ecc://i2c-0:96?slot=0 \
+    -e GW_ONBOARDING=ecc://i2c-0:96?slot=15 \
+    -e GW_REGION=EU868 \
+    --network host \
+    --restart unless-stopped \
+    --device /dev/i2c-0:/dev/i2c-0:rwm \
     quay.io/team-helium/miner:gateway-latest \
     helium_gateway server
 
