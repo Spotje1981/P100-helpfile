@@ -1,0 +1,9 @@
+Oh another docker container I suggest you add is Watchtower, it manages your containers for you and prevents a buildup of cache on your SD card.
+
+docker run -d \
+  --name watchtower \
+  --restart unless-stopped \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower \
+  --cleanup \
+  --schedule "0 0 24 * * *”
