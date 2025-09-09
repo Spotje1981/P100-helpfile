@@ -1,0 +1,2 @@
+crontab -l / e
+1 0 * * 1 /sbin/shutdown -r +5
