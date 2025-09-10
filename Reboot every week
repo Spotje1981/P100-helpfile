@@ -1,2 +1,3 @@
-crontab -l / e
+# m h  dom mon dow   command
+0 */6 * * * sudo docker restart honeygain
 1 0 * * 1 /sbin/shutdown -r +5
